@@ -1,0 +1,22 @@
+{
+  "name": "bag",
+  "version": "0.0.1",
+  "description": "Unordered collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "set -e; for t in test/*.js; do node $t; done"
+  },
+  "devDependencies": {
+    "tape": "~0.2.2"
+  },
+  "keywords": [
+    "bag",
+    "data-structure"
+  ],
+  "author": "Jason Frame <jason@onehackoranother.com> (jasonframe.co.uk)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaz303/bag.git"
+  }
+}
