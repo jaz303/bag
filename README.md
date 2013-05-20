@@ -4,7 +4,7 @@ An array-backed unordered collection.
 
 ## API
 
-    var Bag = require('bag');
+    var Bag = require('bag').Bag;
     
     // Create a new bag
     var bag = new Bag;
@@ -23,7 +23,7 @@ An array-backed unordered collection.
     
     // Membership test
     bag.contains(1);  // => true
-    bag.contains(4);  // => true
+    bag.contains(4);  // => false
     
     // Iterator
     bag.forEach(function(value) { /* ... */ });
