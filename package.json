@@ -1,6 +1,6 @@
 {
   "name": "bag",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Unordered collection",
   "main": "index.js",
   "scripts": {
