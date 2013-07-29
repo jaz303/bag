@@ -3,9 +3,19 @@
 
 exports.Bag = Bag;
 
-function Bag(capacity) {
-  this.data = new Array(capacity || 16);
+var DEFAULT_CAPACITY = 16;
+
+function Bag(capacity, eq) {
+  
+  if (typeof capacity === 'function') {
+    eq = capacity;
+    capacity = null;
+  }
+
+  this.data = new Array(capacity || DEFAULT_CAPACITY);
   this.length = 0;
+  this.eq = eq || function(l, r) { return l === r; };
+
 }
 
 Bag.prototype = {
@@ -34,7 +44,7 @@ Bag.prototype = {
   removeObject: function(obj) {
     for (var i = 0; i < this.length; i++) {
       var tmp = this.data[i];
-      if (tmp === obj) {
+      if (this.eq(tmp, obj)) {
         this.data[i] = this.data[--this.length];
         this.data[this.length] = null;
         return true;
@@ -45,7 +55,7 @@ Bag.prototype = {
   
   contains: function(obj) {
     for (var i = 0; i < this.length; ++i) {
-      if (obj === this.data[i])
+      if (this.eq(obj, this.data[i]))
         return true;
     }
     return false;
@@ -63,7 +73,7 @@ Bag.prototype = {
       var o1 = other[i];
       for (var j = 0; j < this.length; ++j) {
         var o2 = this.data[j];
-        if (o1 === o2) {
+        if (this.eq(o1, o2)) {
           this.remove(j);
           j--;
           modified = true;
