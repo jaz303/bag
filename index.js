@@ -19,6 +19,13 @@ function Bag(capacity, eq) {
 }
 
 Bag.prototype = {
+  toString: function() {
+    var toPrint = this.data.slice(0, Math.min(10, this.length));
+    return "<Bag" + toPrint.map(function(d) {
+      return ' ' + d;
+    }).join('') + (this.length > 10 ? ' ...>' : '>');
+  },
+
   forEach: function(iterator) {
     for (var i = 0; i < this.length; ++i) {
       iterator(this.data[i]);

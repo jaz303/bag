@@ -8,6 +8,17 @@ test('initial state', function(assert) {
   assert.end();
 });
 
+test('printing', function(assert) {
+  var bag = new Bag;
+  bag.add(1);
+  bag.add(1);
+  bag.add(2);
+  bag.add(3);
+  bag.add(5);
+  assert.equal(bag.toString(), '<Bag 1 1 2 3 5>');
+  assert.end();
+});
+
 test('add', function(assert) {
   var bag = new Bag;
   bag.add(1);
