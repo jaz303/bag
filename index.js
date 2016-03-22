@@ -3,7 +3,7 @@
 
 exports.Bag = Bag;
 
-var DEFAULT_CAPACITY = 16;
+const DEFAULT_CAPACITY = 16;
 
 function Bag(capacity, eq) {
   
