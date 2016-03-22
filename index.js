@@ -26,9 +26,9 @@ Bag.prototype = {
     }).join('') + (this.length > 10 ? ' ...>' : '>');
   },
 
-  forEach: function(iterator) {
+  forEach: function(iterator, ctx) {
     for (var i = 0; i < this.length; ++i) {
-      iterator(this.data[i]);
+      iterator.call(ctx, this.data[i]);
     }
   },
   
